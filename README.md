@@ -20,6 +20,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+
+## Arkjet Link 
+https://app.arcjet.com/auth/signin --for api
+
+## create Link 
+https://create.xyz ---for website hero section making 
+
+## Clerk app link 
+https://clerk.com/ -- for authenication like logina and signup
+
+## shadcn ui 
+https://ui.shadcn.com/ --for ui component for react 
+
+## Supa database for datatbase
+https://supabase.com/ --- for database managenment
+
+## Google AI  use the api from there and use in your project
+aistudio.google.com
+
+## To make the user admin use the cler app or supabase app to make the user admin role and only after that u can be able to use the admin poetal 
+-----And to go to the Admin portal we have to go through the URL like www.aicarmarker.com/admin and only after 
+that u can be able to go to the admin page.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

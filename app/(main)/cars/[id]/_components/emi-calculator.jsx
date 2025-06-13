@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import React from "react";
 
 function EmiCalculator({ price = 10000 }) {
   const [loanAmount, setLoanAmount] = useState("");

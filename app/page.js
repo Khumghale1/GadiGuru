@@ -18,23 +18,63 @@ export default async function Home() {
   const featuredCars = await getFeaturedCars();
 
   return (
-    <div className="flex flex-col pt-20">
+    <div className="flex flex-col pt-10">
       {/* Hero Section with Gradient Title */}
-      <section className="relative py-16 md:py-28 ">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <h1 className="text-5xl md:text-8xl mb-4 gradient-title">
-              Find your Dream Car with GadiGuru
-            </h1>
-            <p className="text-xl text-gray-500 mb-8 max-w-2xl mx-auto">
-              Advanced AI Car Search and test drive from thousands of vehicles.
-            </p>
-          </div>
+      <section className="relative min-h-screen bg-gray-50 flex flex-col justify-between overflow-hidden">
+  {/* Background Video */}
+  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 z-0 pointer-events-none opacity-60 w-[400px] max-w-full">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full"
+    >
+      <source src="https://videos.ctfassets.net/j20krz61k3rk/1CDqkh4rpazZHjAl1NN8kW/73db9a1ae63cf8aac9fc418a8dbf557d/conveyer-SOLO.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
-          {/* Search Component (Client) */}
-          < HomeSearch />
-        </div>
-      </section>
+  {/* Top Content */}
+  <div className="flex-grow flex flex-col justify-center items-center text-center px-4 max-w-5xl mx-auto relative z-10">
+    <h1 className="text-4xl md:text-7xl font-bold leading-tight mb-6 gradient-title">
+      Buy & Sell Your Perfect Ride with <span className="text-red-600">GadiGuru!</span>
+    </h1>
+    <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl">
+      Nepal Biggest online MarketPlace at your Mobile 
+    </p>
+
+    {/* Search Component */}
+    <div className="w-full">
+      <HomeSearch />
+    </div>
+  </div>
+
+  {/* Bottom Marquee (Car Makes) */}
+  <div className="relative overflow-hidden py-4  shadow-inner z-10 mt-auto mb-8">
+    <div className="flex gap-4 animate-marquee px-4">
+      {carMakes.concat(carMakes).map((make, index) => (
+        <Link
+          key={`${make.name}-${index}`}
+          href={`/cars?make=${make.name}`}
+          className="bg-white rounded-lg shadow p-4 text-center hover:shadow-md transition cursor-pointer w-40 shrink-0"
+        >
+          <div className="h-10 w-auto mx-auto mb-2 relative">
+            <Image
+              src={make.imageUrl || `/make/${make.name.toLowerCase()}.webp`}
+              alt={make.name}
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+          <h3 className="font-medium">{make.name}</h3>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
+
+
 
       {/* Featured Cars */}
       <section className="py-12">

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { CarFilters } from "./_components/car-filters";
 import { getCarFilters } from "@/actions/car-listing";
 import { CarListings } from "./_components/cars-listing";
@@ -8,7 +9,6 @@ export const metadata = {
 };
 
 export default async function CarsPage() {
-  // Fetch filters data on the server
   const filtersData = await getCarFilters();
 
   return (
@@ -18,12 +18,16 @@ export default async function CarsPage() {
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Filters Section */}
         <div className="w-full lg:w-80 flex-shrink-0">
-          <CarFilters filters={filtersData.data} />
+          <Suspense fallback={<div>Loading filters...</div>}>
+            <CarFilters filters={filtersData.data} />
+          </Suspense>
         </div>
 
         {/* Car Listings */}
         <div className="flex-1">
-          <CarListings />
+          <Suspense fallback={<div>Loading cars...</div>}>
+            <CarListings />
+          </Suspense>
         </div>
       </div>
     </div>

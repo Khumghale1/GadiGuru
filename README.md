@@ -6,13 +6,8 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -39,7 +34,7 @@ https://supabase.com/ --- for database managenment
 ## Google AI  use the api from there and use in your project
 aistudio.google.com
 
-## To make the user admin use the cler app or supabase app to make the user admin role and only after that u can be able to use the admin poetal 
+## To make the user admin use the clerk app or supabase app to make the user admin role and only after that u can be able to use the admin poetal 
 -----And to go to the Admin portal we have to go through the URL like www.aicarmarker.com/admin and only after 
 that u can be able to go to the admin page.
 

@@ -1,7 +1,8 @@
 "use client";
 
 import { useCallback, useState, useEffect } from "react";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { useSearchParams } from 'next/navigation';
 import { Filter, X, Sliders } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
